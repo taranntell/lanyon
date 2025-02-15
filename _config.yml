@@ -3,7 +3,7 @@ title:               <b>Di</b>ego <b>Lo</b>pez <b>Pa</b>dilla
 tagline:             '' #On technology, product development, etc.'
 description:         'Learning for writing, writing for learning.'
 #url:                 http://lanyon.getpoole.com
-baseurl:             '/lanyon' # reference: https://stackoverflow.com/a/40571887
+baseurl:             '/lanyon' #reference: https://stackoverflow.com/a/40571887
 paginate:            5
 permalink:           pretty
 remote_theme:        poole/lanyon
