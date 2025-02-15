@@ -6,7 +6,7 @@ description:         'A reserved <a href="https://jekyllrb.com" target="_blank">
 #baseurl:             ''
 paginate:            5
 permalink:           pretty
-#remote_theme:        poole/lanyon
+remote_theme:        poole/lanyon
 
 # About/contact
 author:
