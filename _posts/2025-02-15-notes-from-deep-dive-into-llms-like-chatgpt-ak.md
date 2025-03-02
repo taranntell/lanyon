@@ -168,7 +168,7 @@ Because the dataset got a lot higher quality - i.e. filter, extraction and prepa
 
 ##### How Does the Training Look Like?
 
-![Training GPT2](./assets/training_gpt2.jpg)
+![Training GPT2](../images/training_gpt2.jpg)
 
 - The result after the training is called **Base Model**. A base model is a internet-text token simulator. Not enough for an assistant.
 - Every single line is an update to the NN and updates the parameters by a little bit -> so that it's better at predicting the next token in a sequence.
