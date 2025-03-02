@@ -22,7 +22,8 @@ Goal: Have a lot of knowledge inside models by having huge quantity, with high q
 It works by starting with a few seed web pages and then follow all the links ∞.
 
 Filtering the data happens through following steps:  
-![dataset](../images/fineweb-recipe.png).
+
+![dataset]({{ site.baseurl }}/images/fineweb-recipe.png)
 
 ### URL-Filtering
 
@@ -168,7 +169,7 @@ Because the dataset got a lot higher quality - i.e. filter, extraction and prepa
 
 ##### How Does the Training Look Like?
 
-![Training GPT2](../images/training_gpt2.jpg)
+![Training GPT2]({{ site.baseurl }}/images/training_gpt2.jpg)
 
 - The result after the training is called **Base Model**. A base model is a internet-text token simulator. Not enough for an assistant.
 - Every single line is an update to the NN and updates the parameters by a little bit -> so that it's better at predicting the next token in a sequence.
@@ -229,7 +230,7 @@ The GPT2 is an open weight model, its release includes:
 
 All this masks are special tokens that gets added during the post-training stage. The goal is to give the model to know, hey this is the start of a turn for a user or an assistant, and this is what he says, and when it ends, etc.
 
-![](./images/tiktokenizer_conversations_post-training.png)
+![tiktokenizer conversation]({{ site.baseurl }}/images/tiktokenizer_conversations_post-training.png)
 
 The image above shows the special tokens that are sent to ChatGPT servers, also how ChatGPT construct a sequence of tokens, what special combination of words and symbols they use like [>assistant<] to "trick" it, so that the model will start to find the next best token, over and over.
 
@@ -275,7 +276,7 @@ Taking as reference, the paper "[Training language models to follow instruction 
 - Taking Bbycroft as a visualization example, we see that the computation (from top to bottom) for inference to produce the next (single) token in a sequence is very limited - there are not many layers in between. There is not too much amount of computation available. 
   - We need to **distribute the reasoning in the computation across many tokens**.
 
-![models need tokens to think](../images/models_need_tokens_to_think.png)
+![models need tokens to think]({{ site.baseurl }}/images/models_need_tokens_to_think.png)
 
 In the image above clearly, the worse answer is the left one: 
 - Since it puts all the computation to give the correct answer - The answer is $3. - at the very beginning!
@@ -293,7 +294,7 @@ This kind of relates on how we humans think. Is way difficult to guess a math an
 
 #### Models Can't Count 
 
-![counting](../images/models_need_tokens_to_think-counting.png)
+![counting]({{ site.baseurl }}/images/models_need_tokens_to_think-counting.png)
 
 - Models are not good at counting - spelling, because they tried to answer everything in one token. For the question, give the number "........" available, Tiktokenizer expose that the number of tokens for the "...." are 4 tokens and not only one. 
 - Best practice is to use code, since the models are good at copy/paste, it's easier to create a variable with all the dots and count them.
@@ -303,14 +304,14 @@ This kind of relates on how we humans think. Is way difficult to guess a math an
 
 ## Post-Training Stage - Reinforcement Learning
 
-![three stages in a book](../images/three_stages_in_reallife.png)
+![three stages in a book]({{ site.baseurl }}/images/three_stages_in_reallife.png)
 
 Image shows a clear example of the three training stages in a school book. 
 - Pretraining is where all the background knowledge is given.
 - Supervised Finetuning are the problems and answers that an expert (e.g. author of the book) exposes.
 - Reinforcement Learning **requires a lot of practice**, i.e. are the open problems to solve, where the answer is given in the answers section, but normally not showing the process on how to get to the answer directly.
 
-![reinforcement learning](../images/reinforcement_learinging_manystyle_answers.png)
+![reinforcement learning]({{ site.baseurl }}/images/reinforcement_learinging_manystyle_answers.png)
 
 What are reinforcement learning models about?
 - A prompt with a question can have many styles to reach an answer.
