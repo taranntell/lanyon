@@ -22,7 +22,7 @@ Goal: Have a lot of knowledge inside models by having huge quantity, with high q
 It works by starting with a few seed web pages and then follow all the links ∞.
 
 Filtering the data happens through following steps:  
-![dataset](./assets/fineweb-recipe.png).
+![dataset](../images/fineweb-recipe.png).
 
 ### URL-Filtering
 
@@ -218,16 +218,18 @@ The GPT2 is an open weight model, its release includes:
 - Goal: Turn conversations into token sequences.
   - Design an ending coding (analogy - TCP packets).
   - Have data structures with rules on how to encode and decode.
-- Example, LLMs have special tokens: 
-  - <|im_start|> = imaginary monolog start
-  - [>user<] or [>assistant<] 
-  - [|im_sep|] = imaginary monolog separation
-  - The questions
-  - <|im_end|>
+- Example, LLMs have special tokens:
+```
+  <|im_start|> = imaginary monolog start
+  [>user<] or [>assistant<] 
+  [|im_sep|] = imaginary monolog separation
+  The questions
+  <|im_end|>
+```
 
 All this masks are special tokens that gets added during the post-training stage. The goal is to give the model to know, hey this is the start of a turn for a user or an assistant, and this is what he says, and when it ends, etc.
 
-![](./assets/tiktokenizer_conversations_post-training.png)
+![](./images/tiktokenizer_conversations_post-training.png)
 
 The image above shows the special tokens that are sent to ChatGPT servers, also how ChatGPT construct a sequence of tokens, what special combination of words and symbols they use like [>assistant<] to "trick" it, so that the model will start to find the next best token, over and over.
 
@@ -273,7 +275,7 @@ Taking as reference, the paper "[Training language models to follow instruction 
 - Taking Bbycroft as a visualization example, we see that the computation (from top to bottom) for inference to produce the next (single) token in a sequence is very limited - there are not many layers in between. There is not too much amount of computation available. 
   - We need to **distribute the reasoning in the computation across many tokens**.
 
-![models need tokens to think](./assets/models_need_tokens_to_think.png)
+![models need tokens to think](../images/models_need_tokens_to_think.png)
 
 In the image above clearly, the worse answer is the left one: 
 - Since it puts all the computation to give the correct answer - The answer is $3. - at the very beginning!
@@ -291,7 +293,7 @@ This kind of relates on how we humans think. Is way difficult to guess a math an
 
 #### Models Can't Count 
 
-![counting](./assets/models_need_tokens_to_think-counting.png)
+![counting](../images/models_need_tokens_to_think-counting.png)
 
 - Models are not good at counting - spelling, because they tried to answer everything in one token. For the question, give the number "........" available, Tiktokenizer expose that the number of tokens for the "...." are 4 tokens and not only one. 
 - Best practice is to use code, since the models are good at copy/paste, it's easier to create a variable with all the dots and count them.
@@ -301,14 +303,14 @@ This kind of relates on how we humans think. Is way difficult to guess a math an
 
 ## Post-Training Stage - Reinforcement Learning
 
-![three stages in a book](./assets/three_stages_in_reallife.png)
+![three stages in a book](../images/three_stages_in_reallife.png)
 
 Image shows a clear example of the three training stages in a school book. 
 - Pretraining is where all the background knowledge is given.
 - Supervised Finetuning are the problems and answers that an expert (e.g. author of the book) exposes.
 - Reinforcement Learning **requires a lot of practice**, i.e. are the open problems to solve, where the answer is given in the answers section, but normally not showing the process on how to get to the answer directly.
 
-![reinforcement learning](./assets/reinforcement_learinging_manystyle_answers.png)
+![reinforcement learning](../images/reinforcement_learinging_manystyle_answers.png)
 
 What are reinforcement learning models about?
 - A prompt with a question can have many styles to reach an answer.
